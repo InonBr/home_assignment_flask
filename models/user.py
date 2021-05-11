@@ -1,6 +1,5 @@
 from pydantic import BaseModel, EmailStr, Field, validator
 from utils import get_date_time
-from typing import Optional
 from flask_pymongo import PyMongo
 from main import app
 

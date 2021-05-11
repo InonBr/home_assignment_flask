@@ -3,11 +3,14 @@ from flask_pydantic import validate
 from flask_cors import cross_origin
 from models import User, UserLogin
 from utils import insert_user_to_db
-import bcrypt
+from dotenv import load_dotenv
 
+import bcrypt
 import os
 import uuid
 import jwt
+
+load_dotenv()
 
 token = os.getenv("TOKEN")
 
