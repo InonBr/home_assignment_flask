@@ -11,5 +11,5 @@ def test():
 from routes import massage_routes
 from routes import user_routes
 
-if __name__ == '__main__':
-    app.run(host="localhost", port=5000, debug=True)
+# if __name__ == '__main__':
+#     app.run(host="localhost", port=5000, debug=True)
