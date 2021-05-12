@@ -75,3 +75,17 @@ def get_a_massage(user_id, msg_id):
 
     else:
         return {"msg": "massage not found"}, 400
+
+
+@app.route("/api/deleteMassages/<user_id>/<msg_id>", methods=["DELETE"])
+@cross_origin()
+@auth_required
+def delete_a_massage(user_id, msg_id):
+    current_user = request.current_user
+
+    if current_user["_id"] != user_id:
+        return {"msg": "invalid request"}, 400
+
+    CONTENT_COLLECTIONS.delete_one({"receiver": current_user["email"], "_id": msg_id})
+
+    return {"msg": "message deleted successfully"}, 200
